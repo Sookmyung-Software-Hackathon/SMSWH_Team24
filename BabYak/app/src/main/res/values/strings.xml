@@ -5,5 +5,8 @@
     <string name="menu_chat">Chats</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="chat_frag">This is chat Fragment</string>
+
+    <!-- Chatting -->
+    <string name="chat_id">익명1</string>
+    <string name="input">입력</string>
 </resources>
