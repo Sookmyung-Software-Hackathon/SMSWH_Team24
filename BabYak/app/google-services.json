@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "279063365431",
+    "project_id": "babyak-11e1a",
+    "storage_bucket": "babyak-11e1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279063365431:android:3b6358338dc5f5bddffcb2",
+        "android_client_info": {
+          "package_name": "com.example.babyak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279063365431-j0to6ql6csv9kok8e6rqibgigmtigini.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXTMrjl2vV1AWEyxyo23SwbxZM4meB2fU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279063365431-j0to6ql6csv9kok8e6rqibgigmtigini.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
