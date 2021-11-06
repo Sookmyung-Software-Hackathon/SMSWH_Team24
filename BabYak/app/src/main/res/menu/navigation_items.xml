@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_list"
+        android:title="@string/menu_list"
+        android:icon="@drawable/ic_launcher_foreground" />
+    <item android:id="@+id/nav_chat"
+        android:title="@string/menu_chat"
+        android:icon="@drawable/ic_launcher_foreground" />
+    <item android:id="@+id/nav_search"
+        android:title="@string/menu_search"
+        android:icon="@drawable/ic_launcher_foreground" />
+</menu>
