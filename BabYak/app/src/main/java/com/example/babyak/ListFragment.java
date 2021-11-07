@@ -109,8 +109,13 @@ public class ListFragment extends Fragment {
             }
         });
 
-        mainAdapter = new MainAdapter(arrayList);
+        mainAdapter = new MainAdapter(getContext(), arrayList);
         recyclerView.setAdapter(mainAdapter);
+
+        arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
+        arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
+        arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
+
 
 
         Button button = (Button) v.findViewById(R.id.btn_writePost);
@@ -121,6 +126,8 @@ public class ListFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
 
         return v;
     }
