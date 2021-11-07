@@ -1,6 +1,7 @@
 package com.example.babyak;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 //import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +47,9 @@ public class ChatFragment extends Fragment {
     ImageButton choiceBtn;
     EditText edt;
     int[] imageID = {R.drawable.ic_launcher_foreground};
+
+    ImageButton btn_yes;
+    ImageButton btn_no;
 
     String id = "";
 
@@ -153,6 +158,8 @@ public class ChatFragment extends Fragment {
             }
         });
 
+
+
         // 좌측 선택 버튼 클릭 시 - 밥약
         choiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,8 +167,43 @@ public class ChatFragment extends Fragment {
                 //Toast.makeText(getActivity().getApplicationContext(), "hi", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), YesOrNo.class);
                 startActivity(intent);
+                /*
+                switch (v.getId()) {
+                    case R.id.chat_choiceBtn:
+                        break;
+
+                }
+                Dialog dialog = new Dialog(getActivity());
+                dialog.requestWindowFeature(Window.FEATURE_LEFT_ICON);
+                dialog.setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.ic_baseline_restaurant_24);
+                dialog.setContentView(R.layout.custom_dialog);
+                dialog.setTitle("babyak");
+                dialog.show();
+
+                btn_yes = (ImageButton) v.findViewById(R.id.btn_yes);
+                btn_no = (ImageButton) v.findViewById(R.id.btn_no);
+
+                btn_yes.setOnClickListener(this);
+                btn_no.setOnClickListener(this);
+
+
+
+                btn_yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(getActivity(), "밥약 성공!!!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                btn_no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(getActivity(), "밥약 실패...", Toast.LENGTH_SHORT).show();
+                    }
+                });*/
             }
         });
+
         return v;
     }
+
 }

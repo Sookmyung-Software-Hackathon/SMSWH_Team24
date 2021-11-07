@@ -8,83 +8,89 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="6dp"
-        >
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/meetingTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
             android:layout_margin="4dp"
-
             android:hint="제목"
-            />
+            android:textColor="@color/black"
+            android:textSize="20dp"
+
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/meetingUploader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textStyle="normal"
-            android:textColor="@color/black"
             android:layout_margin="4dp"
-
             android:hint="게시자정보"
-            />
+            android:textColor="@color/black"
+            android:textSize="15dp"
+
+            android:textStyle="normal" />
+
         <TextView
             android:id="@+id/meetingPost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textStyle="normal"
-            android:textColor="@color/black"
             android:layout_margin="4dp"
+            android:hint="설명"
+            android:textColor="@color/black"
+            android:textSize="15dp"
 
-            android:hint="설명"/>
+            android:textStyle="normal" />
+
         <TextView
             android:id="@+id/meetingSpotName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textStyle="normal"
-            android:textColor="@color/black"
             android:layout_margin="4dp"
+            android:hint="식당이름"
+            android:textColor="@color/black"
+            android:textSize="15dp"
 
-            android:hint="식당이름"/>
+            android:textStyle="normal" />
+
         <ImageView
             android:id="@+id/meetingSpot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/map_img"
-            />
+            android:src="@drawable/map_img" />
+
         <TextView
             android:id="@+id/meetingHeadCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textStyle="normal"
-            android:textColor="@color/black"
             android:layout_margin="4dp"
+            android:hint="인원수"
+            android:textColor="@color/black"
+            android:textSize="15dp"
 
-            android:hint="인원수"/>
+            android:textStyle="normal" />
+
         <Button
             android:id="@+id/startChat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="right"
-            android:text="채팅"
-            android:textStyle="bold"
-            android:textSize="15dp"
             android:clickable="true"
-            />
+            android:gravity="center"
+            android:text="채팅"
+            android:textSize="15dp"
+            android:textStyle="bold" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
