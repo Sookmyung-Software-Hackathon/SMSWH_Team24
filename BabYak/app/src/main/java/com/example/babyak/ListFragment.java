@@ -1,5 +1,7 @@
 package com.example.babyak;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -85,6 +88,15 @@ public class ListFragment extends Fragment {
         arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
         arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
         arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
+
+        Button button =(Button) v.findViewById(R.id.btn_writePost);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PostActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return v;
     }
