@@ -51,7 +51,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),PostActivity.class);
+                Intent intent = new Intent(view.getContext(),DetailActivity.class);
                 mContext.startActivity(intent);
 
 

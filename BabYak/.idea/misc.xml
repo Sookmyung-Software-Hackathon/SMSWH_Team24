@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jungm/Documents/GitHub/SMSWH/BabYak/app/src/main/res/drawable/ic_baseline_assignment_ind_24.xml" value="0.36574074074074076" />
+        <entry key="..\:/Users/jungm/Documents/GitHub/SMSWH/BabYak/app/src/main/res/layout/activity_detail.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/jungm/Documents/GitHub/SMSWH/BabYak/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
         <entry key="..\:/Users/jungm/Documents/GitHub/SMSWH/BabYak/app/src/main/res/layout/fragment_list.xml" value="0.36633663366336633" />
+        <entry key="..\:/Users/jungm/Documents/GitHub/SMSWH/BabYak/app/src/main/res/layout/fragment_post.xml" value="0.32314814814814813" />
         <entry key="..\:/Users/woo/Documents/GitHub/SMSWH/BabYak/app/src/main/res/layout/activity_chat.xml" value="0.1778115501519757" />
         <entry key="..\:/Users/woo/Documents/GitHub/SMSWH/BabYak/app/src/main/res/layout/activity_detail.xml" value="0.33" />
         <entry key="..\:/Users/woo/Documents/GitHub/SMSWH/BabYak/app/src/main/res/layout/activity_main.xml" value="0.1778115501519757" />
@@ -15,7 +19,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
