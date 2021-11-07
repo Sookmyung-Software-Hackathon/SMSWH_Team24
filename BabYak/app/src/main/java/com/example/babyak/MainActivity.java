@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         // 첫 화면 띄우기 - 글 목록
         getSupportFragmentManager().beginTransaction().add(R.id.frameLayout, listFragment).commit();
 
+        // id 연결
+        //Bundle bundle = new Bundle();
+        //bundle.putString("user_id", new GlobalVar().getId());
+        //chatFragment.setArguments(bundle);
+
         // navigation var 클릭 시 fragment 변경
         bNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -42,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, chatFragment).commit();
                         break;
                     case R.id.nav_search:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, searchFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new LoginFragment()).commit();
                         break;
 
                 }

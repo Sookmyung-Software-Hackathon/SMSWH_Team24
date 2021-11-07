@@ -9,4 +9,7 @@
     <!-- Chatting -->
     <string name="chat_id">person1</string>
     <string name="input">SEND</string>
+
+    <!-- Login -->
+    <string name="login">Login</string>
 </resources>

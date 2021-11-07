@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,11 +44,9 @@ public class ChatFragment extends Fragment {
 
     String id = "";
 
-
-
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "user_id";
+    private static final String ARG_PARAM2 = "user_pw";
 
     private String mParam1;
     private String mParam2;
@@ -72,6 +71,13 @@ public class ChatFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+//        getParentFragmentManager().setFragmentResultListener("key", this, new FragmentResultListener() {
+//            @Override
+//            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+//                idKey = result.getString("idKey");
+//            }
+//        });
     }
 
     @Override
@@ -90,7 +96,8 @@ public class ChatFragment extends Fragment {
         final DatabaseReference myRef = db.getReference("message");
 
         // 로그인한 아이디
-        id = "id";
+        GlobalVar gv = (GlobalVar) getActivity().getApplication();
+        id = gv.getId();
 
         final ChatAdapter ca = new ChatAdapter(getActivity().getApplicationContext(), R.layout.chat_item, list, id);
         ((ListView) v.findViewById(R.id.chat_listView)).setAdapter(ca);
@@ -100,14 +107,18 @@ public class ChatFragment extends Fragment {
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (id == null) {
+                    Toast.makeText(getActivity().getApplicationContext(), "로그인을 하시오.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (edt.getText().toString().equals("")) {
-                    Toast.makeText(getActivity().getApplicationContext(), "내용을 입력하세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "내용을 입력하세오.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     StringBuffer sb = new StringBuffer(edt.getText().toString());
                     if (sb.length() > 15){
-                        for (int i = 0; i < sb.length() / 15; i++)
-                            sb.insert(15 * i, "\n");
+                        for (int i = 1; i % 15 == 0; i++)
+                            sb.insert(i, "\n");
                     }
 
                     myRef.push().setValue(new ChatData(R.drawable.ic_launcher_foreground, id, sb.toString()));
