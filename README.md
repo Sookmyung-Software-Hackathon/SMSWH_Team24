@@ -44,4 +44,4 @@
 
 ## 🌮 페이지 구성(시나리오)
 
-
+<img width="1085" alt="스크린샷 2021-11-07 오후 11 19 31" src="https://user-images.githubusercontent.com/87758193/140648865-84f057e8-bc1b-45dc-9d74-2b5674e8956e.png">
