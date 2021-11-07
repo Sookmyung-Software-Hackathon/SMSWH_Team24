@@ -93,13 +93,13 @@ public class ChatFragment extends Fragment {
 
         // Firedb에 메시지 쓰기
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = db.getReference("message");
+        DatabaseReference myRef = db.getReference("message");
 
         // 로그인한 아이디
         GlobalVar gv = (GlobalVar) getActivity().getApplication();
         id = gv.getId();
 
-        final ChatAdapter ca = new ChatAdapter(getActivity().getApplicationContext(), R.layout.chat_item, list, id);
+        ChatAdapter ca = new ChatAdapter(getActivity().getApplicationContext(), R.layout.chat_item, list, id);
         ((ListView) v.findViewById(R.id.chat_listView)).setAdapter(ca);
 
 
@@ -130,9 +130,11 @@ public class ChatFragment extends Fragment {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
                 ChatData value = snapshot.getValue(ChatData.class);
                 list.add(value);
                 ca.notifyDataSetChanged();
+                //((ChatAdapter) ca).addChat(chat);
             }
 
             @Override
@@ -160,22 +162,10 @@ public class ChatFragment extends Fragment {
         choiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(getContext(), YesOrNo.class);
-                //startActivityForResult(intent, 1);
+                Intent intent = new Intent(getContext(), YesOrNo.class);
+                startActivity(intent);
             }
         });
-
         return v;
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == 1) {
-            Toast.makeText(getActivity(), "밥약 성공!!!", Toast.LENGTH_LONG).show();
-        }
-        else {
-            Toast.makeText(getActivity(), "밥약 실패...", Toast.LENGTH_LONG).show();
-        }
     }
 }
