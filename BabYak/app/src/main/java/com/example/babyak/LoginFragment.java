@@ -56,7 +56,7 @@ public class LoginFragment extends Fragment {
         user_pw = (EditText) v.findViewById(R.id.user_pw);
         btn_login = (Button) v.findViewById(R.id.login_btn);
 
-        btn_test = (Button) v.findViewById(R.id.test_btn);
+        //btn_test = (Button) v.findViewById(R.id.test_btn);
 
         GlobalVar gv = (GlobalVar) getActivity().getApplication();
 
@@ -67,14 +67,14 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        btn_test.setOnClickListener(new View.OnClickListener() {
-           @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),PostActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-            }
-        });
+//        btn_test.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(),PostActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                startActivity(intent);
+//            }
+//        });
 
         return v;
     }

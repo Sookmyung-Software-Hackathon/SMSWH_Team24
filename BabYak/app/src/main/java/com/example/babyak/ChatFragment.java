@@ -1,6 +1,9 @@
 package com.example.babyak;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -154,6 +157,7 @@ public class ChatFragment extends Fragment {
         choiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Toast.makeText(getActivity().getApplicationContext(), "hi", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), YesOrNo.class);
                 startActivity(intent);
             }
