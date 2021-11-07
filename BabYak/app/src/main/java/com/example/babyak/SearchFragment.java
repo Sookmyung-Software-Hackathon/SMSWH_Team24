@@ -64,20 +64,20 @@ public class SearchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_search,container,false);
-        btn = view.findViewById(R.id.btndetail);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),PostActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-            }
-        });
+        //view = inflater.inflate(R.layout.fragment_search,container,false);
+//        btn = view.findViewById(R.id.btndetail);
+//
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(),PostActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                startActivity(intent);
+//            }
+//        });
 
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_search, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_search, container, false);
+        //return view;
     }
 }

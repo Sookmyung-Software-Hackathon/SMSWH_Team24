@@ -45,12 +45,14 @@ public class PostActivity extends AppCompatActivity {
         contents = findViewById(R.id.Text_post);
         place = findViewById(R.id.Text_spotName);
         numberPerson = findViewById(R.id.Text_headCount);
+        savebtn = findViewById(R.id.savePost);
+        dBListView = findViewById(R.id.DBListView);
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         dBListView.setAdapter(adapter);
         getFirebaseDataBase();
 
-        savebtn = (Button) findViewById(R.id.savePost);
+
 
         savebtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {

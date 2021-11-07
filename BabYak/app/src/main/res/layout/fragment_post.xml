@@ -3,106 +3,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostFragment">
+    tools:context=".PostActivity">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="6dp"
+        >
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="6dp"
+            android:layout_margin="3dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="제목"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
             >
-            <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Text_uploader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Text_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
 
-                    android:hint="제목"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Text_uploader"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:hint="게시자이름"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Text_post"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:hint="설명"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Text_spotName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:hint="식당이름"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-            <TextView
-                android:id="@+id/meetingSpot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="장소찾기"
-                android:layout_margin="3dp"
+                android:hint="게시자이름"
                 />
-            <RelativeLayout
-                android:id="@+id/map_view"
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Text_post"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                >
 
-            </RelativeLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Text_headCount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:hint="인원수"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-            <Button
-                android:id="@+id/savePost"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="right"
-                android:text="저장"
-                android:textStyle="bold"
-                android:textSize="15dp"
-                android:clickable="true"
+                android:hint="설명"
                 />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Text_spotName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-        </LinearLayout>
+                android:hint="식당이름"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/meetingSpot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="장소찾기"
+            android:layout_margin="3dp"
+            />
+        <RelativeLayout
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            >
+        </RelativeLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Text_headCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
+                android:hint="인원수"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/savePost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:text="저장"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:clickable="true"
+            />
+        <ListView
+            android:id="@+id/DBListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    </LinearLayout>
 </FrameLayout>

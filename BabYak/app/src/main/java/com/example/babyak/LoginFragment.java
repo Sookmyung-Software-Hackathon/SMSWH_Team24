@@ -1,5 +1,6 @@
 package com.example.babyak;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 public class LoginFragment extends Fragment {
     EditText user_id;
     EditText user_pw;
-    Button btn_login;
+    Button btn_login; Button btn_test;
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -55,6 +56,8 @@ public class LoginFragment extends Fragment {
         user_pw = (EditText) v.findViewById(R.id.user_pw);
         btn_login = (Button) v.findViewById(R.id.login_btn);
 
+        btn_test = (Button) v.findViewById(R.id.test_btn);
+
         GlobalVar gv = (GlobalVar) getActivity().getApplication();
 
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +67,14 @@ public class LoginFragment extends Fragment {
             }
         });
 
+        btn_test.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),PostActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
 
         return v;
     }
