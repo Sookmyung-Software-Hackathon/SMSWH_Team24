@@ -5,6 +5,8 @@ public class MainData {
     private int iv_profile;
     private String tv_title, tv_content,tv_date, tv_place, tv_people, tv_writer;
 
+    public MainData(){}
+
     public MainData( String tv_title, String tv_content, String tv_date, String tv_place, String tv_people, String tv_writer) {
         //this.iv_profile = iv_profile;
         this.tv_title = tv_title;

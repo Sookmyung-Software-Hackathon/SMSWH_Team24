@@ -14,6 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -24,9 +31,12 @@ import java.util.ArrayList;
  */
 public class ListFragment extends Fragment {
 
-    private ArrayList<MainData> arrayList;
+    DatabaseReference databaseReference;
+    RecyclerView recyclerView;
+    FirebaseDatabase firebaseDatabase;
+
+    public ArrayList<MainData> arrayList;
     private MainAdapter mainAdapter;
-    private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
 
 
@@ -69,7 +79,6 @@ public class ListFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
     }
 
     @Override
@@ -81,16 +90,31 @@ public class ListFragment extends Fragment {
         linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        arrayList = new ArrayList<>();
+        arrayList = new ArrayList<MainData>();
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference().child("name");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    MainData m = ds.getValue(MainData.class);
+                    arrayList.add(m);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         mainAdapter = new MainAdapter(arrayList);
         recyclerView.setAdapter(mainAdapter);
 
-        arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
-        arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
-        arrayList.add(new MainData("title", "have lunch together", "11/04", "kyochon", "4 people","Jungmin"));
 
-        Button button =(Button) v.findViewById(R.id.btn_writePost);
-        button.setOnClickListener(new View.OnClickListener(){
+        Button button = (Button) v.findViewById(R.id.btn_writePost);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), PostActivity.class);
@@ -100,8 +124,6 @@ public class ListFragment extends Fragment {
 
         return v;
     }
-
-
 
 }
 

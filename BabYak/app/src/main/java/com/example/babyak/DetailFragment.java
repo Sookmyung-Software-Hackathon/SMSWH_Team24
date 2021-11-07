@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import net.daum.mf.map.api.MapView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+//import net.daum.mf.map.api.MapView;
 
 /**
  * A simple {@link Fragment} subclass.
