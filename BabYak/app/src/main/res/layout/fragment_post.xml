@@ -37,12 +37,6 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <RelativeLayout
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,10 +73,10 @@
         <RelativeLayout
             android:id="@+id/map_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            >
+            android:layout_height="170dp"
+            android:layout_margin="3dp">
         </RelativeLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
