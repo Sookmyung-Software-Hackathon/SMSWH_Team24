@@ -18,6 +18,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -36,9 +37,9 @@ import java.util.List;
 
 public class ChatFragment extends Fragment {
     ArrayList<ChatData> list = new ArrayList<>();
-    //ListView lv;
+    ListView lv;
     Button sendBtn;
-    Button choiceBtn;
+    ImageButton choiceBtn;
     EditText edt;
     int[] imageID = {R.drawable.ic_launcher_foreground};
 
@@ -71,13 +72,6 @@ public class ChatFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-//        getParentFragmentManager().setFragmentResultListener("key", this, new FragmentResultListener() {
-//            @Override
-//            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-//                idKey = result.getString("idKey");
-//            }
-//        });
     }
 
     @Override
@@ -86,10 +80,10 @@ public class ChatFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_chat, container, false);
 
-        final ListView lv = (ListView) v.findViewById(R.id.chat_listView);
+        lv = (ListView) v.findViewById(R.id.chat_listView);
         edt = (EditText) v.findViewById(R.id.chat_editText);
         sendBtn = (Button) v.findViewById(R.id.chat_sendBtn);
-        choiceBtn = (Button) v.findViewById(R.id.chat_choiceBtn);
+        choiceBtn = (ImageButton) v.findViewById(R.id.chat_choiceBtn);
 
         // Firedb에 메시지 쓰기
         FirebaseDatabase db = FirebaseDatabase.getInstance();

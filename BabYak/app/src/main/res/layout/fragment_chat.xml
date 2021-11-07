@@ -30,12 +30,14 @@
         android:layout_marginBottom="20dp"
         android:layout_marginHorizontal="10dp"
         android:orientation="horizontal">
-        <Button
+        <ImageButton
             android:id="@+id/chat_choiceBtn"
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginHorizontal="10dp"/>
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_rice_bowl_24"/>
         <EditText
             android:id="@+id/chat_editText"
             android:layout_weight="9"
