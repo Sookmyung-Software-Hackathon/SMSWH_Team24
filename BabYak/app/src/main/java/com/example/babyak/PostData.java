@@ -1,61 +1,35 @@
 package com.example.babyak;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PostData {
 
-
-    private String titlepost;
-    private String textpost;
-    private String uploaderpost;
-    private String spotNamepost;
-    private String headCountpost;
+    public String title;
+    public String name;
+    public String content;
+    public String place;
+    public String numberperson;
 
     public PostData(){}
 
-    public PostData(String titlepost, String textpost, String uploaderpost, String spotNamepost, String headCountpost) {
-        this.textpost = textpost;
-        this.uploaderpost = uploaderpost;
-        this.spotNamepost = spotNamepost;
-        this.headCountpost = headCountpost;
+    public PostData(String title, String name, String content, String place, String numberperson){
+        this.title = title;
+        this.name = name;
+        this.content = content;
+        this.place = place;
+        this.numberperson = numberperson;
     }
 
-    public String getTitlepost() {
-        return titlepost;
-    }
+    public Map<String, Object> toMap(){
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("title",title);
+        result.put("name",name);
+        result.put("content",content);
+        result.put("place",place);
+        result.put("numberperson",numberperson);
 
-    public void setTitlepost(String titlepost) {
-        this.titlepost = titlepost;
-    }
-
-    public String getTextpost() {
-        return textpost;
-    }
-
-    public void setTextpost(String textpost) {
-        this.textpost = textpost;
-    }
-
-    public String getUploaderpost() {
-        return uploaderpost;
-    }
-
-    public void setUploaderpost(String uploaderpost) {
-        this.uploaderpost = uploaderpost;
-    }
-
-    public String getSpotNamepost() {
-        return spotNamepost;
-    }
-
-    public void setSpotNamepost(String spotNamepost) {
-        this.spotNamepost = spotNamepost;
-    }
-
-    public String getHeadCountpost() {
-        return headCountpost;
-    }
-
-    public void setHeadCountpost(String headCountpost) {
-        this.headCountpost = headCountpost;
+        return result;
     }
 
 }
