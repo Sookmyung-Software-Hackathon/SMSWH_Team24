@@ -52,8 +52,6 @@ public class PostActivity extends AppCompatActivity {
         dBListView.setAdapter(adapter);
         getFirebaseDataBase();
 
-
-
         savebtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 titlE = title.getText().toString();
@@ -62,7 +60,7 @@ public class PostActivity extends AppCompatActivity {
                 placE = place.getText().toString();
                 numberPersoN = numberPerson.getText().toString();
 
-                if(!isExisttitlE()){
+                if(!isExistName()){
                     postFirebaseDataBase(true);
                     getFirebaseDataBase();
                     title.setText("");
@@ -93,8 +91,8 @@ public class PostActivity extends AppCompatActivity {
 
 //삭제..        dBListView.setOnItemLongClickListener();
     }
-    public boolean isExisttitlE(){
-        boolean isExist = arrayIndex.contains(titlE);
+    public boolean isExistName(){
+        boolean isExist = arrayIndex.contains(namE);
         return isExist;
     }
     public void postFirebaseDataBase(boolean add){
@@ -105,7 +103,7 @@ public class PostActivity extends AppCompatActivity {
             PostData post = new PostData(titlE, namE, contentS, placE, numberPersoN);
             postValues = post.toMap();
         }
-        childUpdates.put("/id_list/"+titlE, postValues);
+        childUpdates.put("/id_list/"+namE, postValues);
         reference.updateChildren(childUpdates);
     }
     public void getFirebaseDataBase(){
@@ -132,7 +130,7 @@ public class PostActivity extends AppCompatActivity {
                 showToast("데이터베이스로드실패");
             }
         };
-        Query data = FirebaseDatabase.getInstance().getReference().child("title_list").orderByChild("title");
+        Query data = FirebaseDatabase.getInstance().getReference().child("id_list").orderByChild("id");
         data.addListenerForSingleValueEvent(eventListener);
     }
     void showToast(String msg){
