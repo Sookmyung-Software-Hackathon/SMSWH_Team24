@@ -49,8 +49,5 @@
             android:layout_height="50dp"
             android:text="@string/input"
             android:layout_marginHorizontal="10dp"/>
-
-
     </LinearLayout>
-
 </LinearLayout>

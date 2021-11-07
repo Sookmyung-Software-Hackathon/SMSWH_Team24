@@ -36,7 +36,7 @@ import java.util.List;
 
 public class ChatFragment extends Fragment {
     ArrayList<ChatData> list = new ArrayList<>();
-    ListView lv;
+    //ListView lv;
     Button sendBtn;
     Button choiceBtn;
     EditText edt;
@@ -86,7 +86,7 @@ public class ChatFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_chat, container, false);
 
-        lv = (ListView) v.findViewById(R.id.chat_listView);
+        final ListView lv = (ListView) v.findViewById(R.id.chat_listView);
         edt = (EditText) v.findViewById(R.id.chat_editText);
         sendBtn = (Button) v.findViewById(R.id.chat_sendBtn);
         choiceBtn = (Button) v.findViewById(R.id.chat_choiceBtn);
@@ -101,7 +101,6 @@ public class ChatFragment extends Fragment {
 
         ChatAdapter ca = new ChatAdapter(getActivity().getApplicationContext(), R.layout.chat_item, list, id);
         ((ListView) v.findViewById(R.id.chat_listView)).setAdapter(ca);
-
 
         // 입력 버튼 클릭 시
         sendBtn.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +129,6 @@ public class ChatFragment extends Fragment {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
                 ChatData value = snapshot.getValue(ChatData.class);
                 list.add(value);
                 ca.notifyDataSetChanged();

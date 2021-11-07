@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import net.daum.mf.map.api.MapView;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link DetailFragment#newInstance} factory method to
@@ -57,7 +59,14 @@ public class DetailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_detail, container, false);
+
+        MapView mapView = new MapView(getActivity());
+
+        ViewGroup mapViewContainer = (ViewGroup) v.findViewById(R.id.map_view);
+        mapViewContainer.addView(mapView);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail, container, false);
+        return v;
     }
 }
