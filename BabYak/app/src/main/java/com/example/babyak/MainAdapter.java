@@ -1,5 +1,7 @@
 package com.example.babyak;
 
+import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHolder> {
-
+    private Context mContext;
     private ArrayList<MainData> arrayList;
 
-    public MainAdapter(ArrayList<MainData> arrayList) {
+    public MainAdapter(Context mContext, ArrayList<MainData> arrayList) {
+        this.mContext = mContext;
         this.arrayList = arrayList;
     }
 
@@ -26,6 +30,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
     public MainAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list,parent, false);
         CustomViewHolder holder = new CustomViewHolder(view);
+
+
+
 
         return holder;
     }
@@ -44,8 +51,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String curName = holder.tv_title.getText().toString();
-                Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(view.getContext(),PostActivity.class);
+                mContext.startActivity(intent);
+
+
+
             }
         });
 
