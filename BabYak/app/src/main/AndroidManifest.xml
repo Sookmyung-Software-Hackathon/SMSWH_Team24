@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.BabYak">
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="your_app_key"/>
+
 
         <activity android:name=".YesOrNo" />
         <activity android:name=".MainActivity">
@@ -28,6 +28,7 @@
         </activity>
         <activity android:name=".PostActivity">
         </activity>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="401aab31764284c458f9d7b82dd76074"/>
     </application>
 
 </manifest>

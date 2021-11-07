@@ -61,11 +61,6 @@ public class DetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_detail, container, false);
 
-        MapView mapView = new MapView(getActivity());
-
-        ViewGroup mapViewContainer = (ViewGroup) v.findViewById(R.id.map_view);
-        mapViewContainer.addView(mapView);
-
         // Inflate the layout for this fragment
         return v;
     }

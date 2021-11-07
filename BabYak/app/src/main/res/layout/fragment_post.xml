@@ -36,6 +36,13 @@
                 android:hint="게시자이름"
                 />
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

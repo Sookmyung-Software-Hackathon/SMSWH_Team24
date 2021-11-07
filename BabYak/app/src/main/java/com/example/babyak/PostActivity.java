@@ -2,6 +2,7 @@ package com.example.babyak;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import net.daum.mf.map.api.MapView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,6 +54,13 @@ public class PostActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         dBListView.setAdapter(adapter);
         getFirebaseDataBase();
+
+        // map API
+//        MapView mapView = new MapView(this);
+//
+//        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.mapView);
+//        mapViewContainer.addView(mapView);
+
 
         savebtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
